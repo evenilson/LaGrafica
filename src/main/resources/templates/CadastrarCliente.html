@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="utf-8">
+      <title>La Gráfica</title>
+      <link rel="shortcut icon" href="/img/icon.png">
+      <link rel="stylesheet" type="text/css" href="/css/estilo.css">
+      <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+   </head>
+   <body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-success">
+         <div class="container menu">
+         	<a class="navbar-brand"  href="/">LA<strong>Gráfica</strong></a>
+         </div>
+      </nav>
+      <div class="container">
+         <div class="header text-center text-success">
+            <h1>LA<strong>Gráfica</strong></h1>
+            <h5>Cadastrar Cliente</h5>
+         </div> 
+         <div>
+         	<form action="/cliente/cadastrar" method="POST" th:object="${cliente}">
+         		<input type="hidden" th:field="*{codigo}">
+         		<div class="col-md-12">
+         			<div class="form-row mb-4">
+                    	<div class="col-md-6">
+                          <input type="text" th:field="*{nome}" class="form-control"  placeholder="Nome*" required>
+                       	</div>
+                       	<div class="col-md-3">
+                          <input type="text" th:field="*{cpf}" class="form-control"  placeholder="CPF*" required>
+                       	</div>
+                        <div class="col-md-3">
+                          <input type="text" th:field="*{rg}" class="form-control"  placeholder="RG*" required>
+                        </div>
+                    </div>
+                    <div class="form-row mb-4">
+                       <div class="col-md-2">
+                          <input type="text" th:field="*{cidade}" class="form-control"  placeholder="Cidade*" required>
+                       </div>
+                       <div class="col-md-5">
+                          <input type="text" th:field="*{rua}" class="form-control"  placeholder="Rua*" required>
+                       </div>
+                       <div class="col-md-2">
+                          <input type="text"  th:field="*{numeroCasa}" class="form-control"  placeholder="Numero*" required>
+                       </div>
+                       <div class="col-md-3">
+                          <input type="text"  th:field="*{complemento}" class="form-control"  placeholder="Complemento">
+                       </div>
+                    </div>
+                </div>
+                	<center><button type="submit" class="btn btn-success" value="Adicionar" >Salvar</button></center>
+                <a href="/cliente/listar" class="btn btn-primary">Listar cadastrados</a>
+               </form>
+            </div>
+         </div>
+   </body>
+</html>

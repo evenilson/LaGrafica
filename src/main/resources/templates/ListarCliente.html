@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+   <head>
+      <meta charset="utf-8">
+      <title>La Gráfica</title>
+      <link rel="shortcut icon" href="/img/icon.png">
+      <link rel="stylesheet" type="text/css" href="/css/estilo.css">
+      <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+   </head>
+   <body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-success">
+         <div class="container menu">
+         	<a class="navbar-brand"  href="/">LA<strong>Gráfica</strong></a>
+         </div>
+      </nav>
+      <div class="container">
+         <div class="header text-center text-success">
+            <h1>LA<strong>Gráfica</strong></h1>
+            <h5>Aréa de clientes</h5>
+            <a href="/cliente/form" class="btn btn-info text-dark ">Cadastrar novo</a>
+         </div> 
+         <table class="table table-success">
+		       <thead>
+				<tr>
+					<th class="bg-success" scope="col">#</th>
+					<th class="bg-success" scope="col">Nome</th>
+					<th class="bg-success" scope="col">RG</th>
+					<th class="bg-success" scope="col">CPF</th>
+					<th class="bg-success" scope="col" colSpan="3" ></th>
+		
+				</tr>
+				</thead>
+				<tbody>
+					<tr th:each = "cliente : ${listaDeClientes}">
+						<td class="bg-success" th:text="${cliente.codigo}"></td>
+						<td class="bg-success" th:text="${cliente.nome}"></td>
+						<td class="bg-success" th:text="${cliente.rg}"></td>
+						<td class="bg-success" th:text="${cliente.cpf}"></td>
+						<td class="bg-success"><a  class= "btn btn-danger"  th:href="@{/cliente/excluir/{codigo}(codigo = ${cliente.codigo})}"> Excluir </a></td>
+						<td class="bg-success"><a  class= "btn btn-primary"  th:href="@{/cliente/atualizar/{codigo}(codigo = ${cliente.codigo})}"> Atualizar </a></td>
+						
+					
+					</tr>
+				</tbody>
+		</table>
+      </div>
+   </body>
+</html>
