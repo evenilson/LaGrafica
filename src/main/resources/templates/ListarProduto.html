@@ -17,8 +17,8 @@
       <div class="container">
          <div class="header text-center text-success">
             <h1>LA<strong>Gráfica</strong></h1>
-            <h5>Lista de clientes</h5>
-            <a href="/cliente/form" class="btn btn-info text-dark ">Cadastrar novo</a>
+            <h5>Lista de produtos</h5>
+            <a href="/produto/form" class="btn btn-info text-dark ">Cadastrar novo</a>
          </div> 
          <div class="card bg-dark">
 	  		 <div class="card-body">
@@ -27,20 +27,20 @@
 						<tr>
 							<th scope="col">#</th>
 							<th scope="col">Nome</th>
-							<th scope="col">RG</th>
-							<th scope="col">CPF</th>
+							<th scope="col">Quantidade</th>
+							<th scope="col">Preço</th>
 							<th scope="col" colSpan="3" ></th>
 				
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each = "cliente : ${listaDeClientes}">
-							<td th:text="${cliente.codigo}"></td>
-							<td th:text="${cliente.nome}"></td>
-							<td th:text="${cliente.rg}"></td>
-							<td th:text="${cliente.cpf}"></td>
-							<td ><a  class= "btn btn-danger"  th:href="@{/cliente/excluir/{codigo}(codigo = ${cliente.codigo})}"> Excluir </a></td>
-							<td ><a  class= "btn btn-primary"  th:href="@{/cliente/atualizar/{codigo}(codigo = ${cliente.codigo})}"> Atualizar </a></td>
+						<tr th:each = "produto : ${listaDeProdutos}">
+							<td th:text="${produto.codigo}"></td>
+							<td th:text="${produto.nome}"></td>
+							<td th:text="${produto.quantidade}"></td>
+							<td th:text="${produto.preco}"></td>
+							<td ><a  class= "btn btn-danger"  th:href="@{/produto/excluir/{codigo}(codigo = ${produto.codigo})}"> Excluir </a></td>
+							<td ><a  class= "btn btn-primary"  th:href="@{/produto/atualizar/{codigo}(codigo = ${produto.codigo})}"> Atualizar </a></td>
 							
 						
 						</tr>
@@ -48,7 +48,7 @@
 				</table>
 	  		</div>
 		</div>
-		<a href="/cliente" style="margin-top: 30px;" class="btn btn-light">Voltar</a>
+		<a href="/fornecedor" style="margin-top: 30px;" class="btn btn-light">Voltar</a>
       </div>
    </body>
 </html>

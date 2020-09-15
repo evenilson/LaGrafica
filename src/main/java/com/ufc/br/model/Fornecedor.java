@@ -6,15 +6,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Produto {
-	
+public class Fornecedor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long codigo;
 	
 	private String nome;
-	private String quantidade;
-	private String preco;
+	private String finalidade;
+	private String CNPJ;
 	
 	public Long getCodigo() {
 		return codigo;
@@ -28,20 +27,18 @@ public class Produto {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getQuantidade() {
-		return quantidade;
+	public String getFinalidade() {
+		return finalidade;
 	}
-	public void setQuantidade(String quantidade) {
-		this.quantidade = quantidade;
+	public void setFinalidade(String finalidade) {
+		this.finalidade = finalidade;
 	}
-	public String getPreco() {
-		return preco;
+	public String getCNPJ() {
+		return CNPJ;
 	}
-	public void setPreco(String preco) {
-		this.preco = preco;
+	public void setCNPJ(String cNPJ) {
+		CNPJ = cNPJ;
 	}
-	
-	
 	
 	
 }
