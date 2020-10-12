@@ -6,6 +6,16 @@
       <link rel="shortcut icon" href="/img/icon.png">
       <link rel="stylesheet" type="text/css" href="/css/estilo.css">
       <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+      
+      <script>
+	      $(function(){
+	    	  $("#frmCnpj").inputmask({
+		    		mask: "99.999.999/9999-99"
+		   	  });
+	      });	
+      </script>
    </head>
    <body>
       <nav class="navbar navbar-expand-lg navbar-light bg-success">
@@ -26,13 +36,13 @@
 		         		<div class="col-md-12">
 		         			<div class="form-row mb-4">
 		                    	<div class="col-md-6">
-		                          <input type="text" th:field="*{nome}" class="form-control"  placeholder="Nome*" required>
+		                          <input type="text" th:field="*{nome}" class="form-control" maxlength="30" placeholder="Nome*" required>
 		                       	</div>
 		                       	<div class="col-md-3">
-		                          <input type="text" th:field="*{CNPJ}" class="form-control"  placeholder="CNPJ*" required>
+		                          <input type="text" th:field="*{CNPJ}" class="form-control"  id="frmCnpj" placeholder="CNPJ*" required>
 		                       	</div>
 		                        <div class="col-md-3">
-		                          <input type="text" th:field="*{finalidade}" class="form-control"  placeholder="Finalidade*" required>
+		                          <input type="text" th:field="*{finalidade}" class="form-control" maxlength="30"  placeholder="Finalidade*" required>
 		                        </div>
 		                    </div>
                 		</div>

@@ -7,6 +7,7 @@
       <link rel="shortcut icon" href="/img/icon.png">
       <link rel="stylesheet" type="text/css" href="/css/estilo.css">
       <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+      
    </head>
    <body>
       <nav class="navbar navbar-expand-lg navbar-light bg-success">
@@ -42,7 +43,6 @@
 							<td ><a  class= "btn btn-danger"  th:href="@{/fornecedor/excluir/{codigo}(codigo = ${fornecedor.codigo})}"> Excluir </a></td>
 							<td ><a  class= "btn btn-primary"  th:href="@{/fornecedor/atualizar/{codigo}(codigo = ${fornecedor.codigo})}"> Atualizar </a></td>
 							
-						
 						</tr>
 					</tbody>
 				</table>

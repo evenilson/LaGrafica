@@ -6,6 +6,30 @@
       <link rel="shortcut icon" href="/img/icon.png">
       <link rel="stylesheet" type="text/css" href="/css/estilo.css">
       <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+	  
+	           
+	  
+      <script>
+	      $(function(){
+	    	  
+	    	  $("#frmNumero").inputmask();
+	    	  
+	    	  $("#money").inputmask('decimal', {
+	                'alias': 'numeric',
+	                'groupSeparator': '.',
+	                'autoGroup': true,
+	                'digits': 0,
+	                'radixPoint': ",",
+	                'digitsOptional': true,
+	                'allowMinus': true,
+	                'prefix': 'R$ ',
+	                'placeholder': ''
+	         });
+	      });
+      </script>
+      
    </head>
    <body>
       <nav class="navbar navbar-expand-lg navbar-light bg-success">
@@ -26,13 +50,13 @@
 		         		<div class="col-md-12">
 		         			<div class="form-row mb-4">
 		                    	<div class="col-md-6">
-		                          <input type="text" th:field="*{nome}" class="form-control"  placeholder="Nome*" required>
+		                          <input type="text" th:field="*{nome}" maxlength="20" class="form-control"  placeholder="Nome*" required>
 		                       	</div>
 		                       	<div class="col-md-3">
-		                          <input type="text" th:field="*{quantidade}" class="form-control"  placeholder="Quantidade*" required>
+		                          <input type="text" th:field="*{quantidade}" maxlength="8" class="form-control" id="frmNumero" data-inputmask="'mask': '9', 'repeat': 10, 'greedy' : false" placeholder="Quantidade*" required>
 		                       	</div>
 		                        <div class="col-md-3">
-		                          <input type="text" th:field="*{preco}" class="form-control"  placeholder="Preço*" required>
+		                          <input type="text" th:field="*{preco}" class="form-control dinheiro" maxlength="20" id="money" placeholder="Preço*" required>
 		                        </div>
 		                    </div>
                 		</div>

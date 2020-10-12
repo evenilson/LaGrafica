@@ -6,6 +6,21 @@
       <link rel="shortcut icon" href="/img/icon.png">
       <link rel="stylesheet" type="text/css" href="/css/estilo.css">
       <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+      
+      <script>
+	      $(function(){
+	    	  $("#frmCpf").inputmask({
+	    	    mask: "999.999.999-99"
+	    	  });
+	    	  
+	    	  $("#frmRg").inputmask({
+	    		mask: "99.999.999-9"
+	    	  });
+	      });	
+      </script>
+  
    </head>
    <body>
       <nav class="navbar navbar-expand-lg navbar-light bg-success">
@@ -26,27 +41,27 @@
 		         		<div class="col-md-12">
 		         			<div class="form-row mb-4">
 		                    	<div class="col-md-6">
-		                          <input type="text" th:field="*{nome}" class="form-control"  placeholder="Nome*" required>
+		                          <input type="text" th:field="*{nome}"   class="form-control" maxlength="40" placeholder="Nome*" required>
 		                       	</div>
 		                       	<div class="col-md-3">
-		                          <input type="text" th:field="*{cpf}" class="form-control"  placeholder="CPF*" required>
+		                          <input type="text" th:field="*{cpf}"  class="form-control" id="frmCpf" placeholder="CPF: 000.000.000-00*" required>
 		                       	</div>
 		                        <div class="col-md-3">
-		                          <input type="text" th:field="*{rg}" class="form-control"  placeholder="RG*" required>
+		                          <input type="text" th:field="*{rg}" class="form-control" id="frmRg" placeholder="RG: 00.000.000-00*" required>
 		                        </div>
 		                    </div>
 		                    <div class="form-row mb-4">
 		                       <div class="col-md-2">
-		                          <input type="text" th:field="*{cidade}" class="form-control"  placeholder="Cidade*" required>
+		                          <input type="text" th:field="*{cidade}" class="form-control"  maxlength="20"  placeholder="Cidade*" required>
 		                       </div>
 		                       <div class="col-md-5">
-		                          <input type="text" th:field="*{rua}" class="form-control"  placeholder="Rua*" required>
+		                          <input type="text" th:field="*{rua}" class="form-control" maxlength="40" placeholder="Rua*" required>
 		                       </div>
 		                       <div class="col-md-2">
-		                          <input type="text"  th:field="*{numeroCasa}" class="form-control"  placeholder="Numero*" required>
+		                          <input type="text"  th:field="*{numeroCasa}" class="form-control" maxlength="10" placeholder="Numero*" required>
 		                       </div>
 		                       <div class="col-md-3">
-		                          <input type="text"  th:field="*{complemento}" class="form-control"  placeholder="Complemento">
+		                          <input type="text"  th:field="*{complemento}" class="form-control" maxlength="50" placeholder="Complemento">
 		                       </div>
 		                    </div>
                 		</div>
